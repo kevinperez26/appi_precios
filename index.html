@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparador de Precios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+    <h1>Comparador de Precios</h1>
+</header>
+
+<div class="container">
+
+    <!-- Buscador -->
+    <div class="search-box">
+        <input type="text" id="producto" placeholder="Buscar producto...">
+        <button onclick="buscar()">Buscar</button>
+        <button onclick="refrescar()">Actualizar</button>
+    </div>
+
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Tienda</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Última actualización</th>
+            </tr>
+        </thead>
+        <tbody id="resultados">
+            
+        </tbody>
+    </table>
+
+</div>
+
+<script>
+    function buscar() {
+        const producto = document.getElementById("producto").value;
+
+        //Resultados fictisios 
+        const datos = [
+            { tienda: "Tienda A", precio: "$1000" },
+            { tienda: "Tienda B", precio: "$950" },
+            { tienda: "Tienda C", precio: "$980" }
+        ];
+
+        const tabla = document.getElementById("resultados");
+        tabla.innerHTML = "";
+
+        datos.forEach(item => {
+            const fila = `
+                <tr>
+                    <td>${item.tienda}</td>
+                    <td>${producto}</td>
+                    <td class="price">${item.precio}</td>
+                    <td class="update-time">${new Date().toLocaleTimeString()}</td>
+                </tr>
+            `;
+            tabla.innerHTML += fila;
+        });
+    }
+
+    function refrescar() {
+        buscar(); // reutiliza la búsqueda
+    }
+</script>
+
+</body>
+</html>
