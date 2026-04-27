@@ -1,1 +1,5 @@
 Aportes del Integrante 2 para mejorar el sistema
+----------------------------------------
+Cambios realizados por Integrante 3
+Se realiza esta modificación directamente desde la plataforma web de GitHub con el fin de simular un entorno de trabajo colaborativo.
+Este cambio será posteriormente sincronizado en el entorno local mediante el comando git pull.
